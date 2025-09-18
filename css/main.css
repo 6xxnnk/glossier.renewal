@@ -291,10 +291,8 @@ body {
 
 .section2 {
     width: 100%;
-    height: 814px;
     background-color: white;
     padding: 48px 16px;
-    margin-bottom: 50px;
 }
 
 .section2 .header{
@@ -311,7 +309,6 @@ body {
 .section2 .header .title{}
 .section2 .main{
     width: 100%;
-    height: auto;
     overflow: hidden;
     position: relative;
 
@@ -430,6 +427,8 @@ body {
     height: 350px;
     border-radius: 10px;
     object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
 
 }
 
@@ -448,10 +447,89 @@ body {
 
 }
 
-.section2 .box .icon{
+.section2 .box .icon img{
     position: absolute;
-    width: 100%;
+    width: 27px;
+    height: 27px;
+    object-fit: contain;    
     text-align: center;
     z-index: 10;
-background-color: yellowgreen;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.section3 {
+    width: 100%;
+    background-color: white;
+    padding: 48px 16px;
+}
+
+.section3 .inner .title {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.section3 .header{
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 500;
+
+    
+    
+}
+
+.section3 .main .inner{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    overflow: hidden;
+
+}
+
+.section3 .main .box {
+    width: 156px;
+    height: 200px;  
+    position: relative;
+    margin: 10px;
+
+}
+
+.section3 .main img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+.section3 .main .inner .text p{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: 10px;
 }
