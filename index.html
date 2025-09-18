@@ -4,9 +4,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
+<script>
+        window.onload =()=>{
+            const depth01 = document.querySelectorAll('.depth-01');
+            const depth02 = document.querySelectorAll('.depth-02');
+
+            depth01.forEach((el, index)=>{
+                el.addEventListener('click', (e)=>{
+                    e.preventDefault();
+                    depth02.forEach((el)=>{
+                        el.style.display = 'none';
+                    });
+                    depth01.forEach((el)=>{
+                        el.classList.remove('active');
+                    });
+                    depth02[index].style.display = 'block';
+                    el.classList.add('active');
+                });
+            });
+            
+            
+    };
+
+</script>
+    <script>
+        window.onload = () => {
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1.5,
+                spaceBetween: 15,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                // centeredSlides: true,
+                autoplay: {
+                    delay: 3000, //3초 
+                    disableOnInteraction: false,
+                },
+                speed: 1000
+            });
+        }
+    </script>
+
+
+
+
 <body>
-    
+    <div id="wrap">
+
+        <div class="onboarding">
+            
+                <div class="image">
+                    <img src="img/glossier-lipglaze-icy-carousel-02.jpg" alt="">
+                </div><!-- image -->.
+
+                <div class="inner">
+                    <div class="logo"><img src="img/glossier-logo.png" alt=""></div>
+  
+                     <div class="box">
+                        <h2>sign up</h2>      
+                        <h3>log in</h3>
+                        <p>Continue without registration</p>
+                    </div><!-- box -->
+                        
+                    
+                        
+                        
+                        <div class="text">
+                        By signing up, you agree to Glossier's <br>
+                        <a href="#">Terms of Service</a> 
+                        and 
+                        <a href="#">Privacy Policy</a>.
+                        </div><!-- text -->
+                </div><!-- inner -->
+        </div><!-- onboarding -->
+
+        <section class="section1">
+        <header class="header">
+            <div class="inner">
+                <div class="logo">
+                        <img src="img/glossier-logo-png_seeklogo-336210 1.png" alt="">
+                        <div class="icon">
+                            <img src="img/Vector.png" alt="">
+                            <img src="img/Vector-1.png" alt="">
+                        </div><!-- icon -->
+                </div><!-- logo -->
+
+                <div class="menu">
+                        <nav class="nav">
+                            <ul class="gnb">
+                            <li>
+                                <a href="#" class="depth-01">skincare</a>
+                                <ul class="depth-02">
+                                <li><a href="#">menu1</a></li> 
+                                <li><a href="#">menu2</a></li> 
+                                <li><a href="#">menu3</a></li> 
+                                <li><a href="#">menu4</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="depth-01">makeup</a>
+                                <ul class="depth-02">
+                                <li><a href="#">menu1</a></li> 
+                                <li><a href="#">menu2</a></li> 
+                                <li><a href="#">menu3</a></li> 
+                                <li><a href="#">menu4</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="depth-01">body</a>
+                                <ul class="depth-02">
+                                <li><a href="#">menu1</a></li> 
+                                <li><a href="#">menu2</a></li> 
+                                <li><a href="#">menu3</a></li> 
+                                <li><a href="#">menu4</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="depth-01">sets</a>
+                                <ul class="depth-02">
+                                <li><a href="#">menu1</a></li> 
+                                <li><a href="#">menu2</a></li> 
+                                <li><a href="#">menu3</a></li> 
+                                <li><a href="#">menu4</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="depth-01">about</a>
+                            </li>
+                            </ul>
+                        </nav>
+
+                        
+                       <!--  <div class="menu_back"></div>
+                        <nav class="nav">
+                            <ul class="gnb">
+                            <li>
+                                <ul class="depth-01">
+                                <li><a href="#">menu1</a></li> 
+                                <li><a href="#">menu2</a></li> 
+                                <li><a href="#">menu3</a></li> 
+                                <li><a href="#">menu4</a></li> 
+                                <li><a href="#">menu5</a></li> 
+                                </ul>
+                            </li>
+                            </ul>
+                        </nav> -->
+
+                </div><!-- menu -->
+
+            </div>
+    </header>
+
+        <main class="main"><!--선택자 지정 안해도 됨 -->
+            <div class="image">
+                <img src="img/glossier-skincare-set-tout-desktop .jpg" alt="">
+            </div><!-- image -->
+
+            <div class="text_box">
+                <h2>Skin First, </br>
+                    Makeup Second </h2>
+            </div><!-- text_box -->
+
+            <button class="button">Shop Now</button>
+        </main>
+        </section><!-- section1 -->
+
+        <!-- 하단고정바 필요시 넣기
+        div.bottom_nav -->
+
+
+        <section class="section2">
+        <header class="header">
+            <div class="title">featured products</div>
+        </header>
+        <main class="main">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/glossier-skincare-futuredew-carousel-01.png" alt="">
+                                <div class="text">
+                                    <h2>Futuredew</h2>
+                                    <h3>$26</h3>
+                                </div>
+                                    <p>Hydrating balm for dry skin</p>
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/glossier-skincare-afterbaume-carousel-01.png" alt="">
+                               <div class="text">
+                                    <h2>After Baume</h2>
+                                    <h3>$51</h3>
+                                </div>
+                                    <p>Soothing balm for sensitive skin</p>
+
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/glossier-bdc-espresso-carousel-01.jpg" alt="">
+                                <div class="text">
+                                    <h2>Espresso</h2>
+                                    <h3>$38</h3>
+                                </div>
+                                <p>Body wash and scrub</p>
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/glossier-body-sandstone-set-carousel-01.png" alt="">
+                                <div class="text">
+                                    <h2>Sandstone Set</h2>
+                                    <h3>$56</h3>
+                                </div>
+                                <p>Body duo for smooth skin</p>
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/glossier-body-spritz-obn-carousel-01.png" alt="">
+                                <div class="text">
+                                    <h2>Body Spritz</h2>
+                                    <h3>$28</h3>
+                                </div>
+                                <p>Refreshing body mist</p>
+                                </div><!-- swiper-slide -->
+
+
+                </div> <!-- swiper-wrapper -->
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div><!-- swiper -->
+
+            <button class="button">see all</button>
+
+            <div class="box">
+                <img src="img/glossier-cppb-homepage-1x.jpg" alt="">
+
+                <div class="text">
+                    Utilize your phone’s camera for <br>
+                    facial recognition and discover <br>
+                    product insights designed to complement <br>
+                    your own beauty
+                </div>
+                
+                <div class="icon">
+                    <a href="img/Vector-3.png"></a>
+                </div>
+                
+            </div>
+
+        </inner>
+        </main>
+        
+        </section><!-- section2 -->
+
+
+
+        <section class="section3">
+            <header class="header">
+                <div class="title">shop by categories</div>
+
+            </header>
+            
+            <main class="main">
+                <inner class="inner">
+
+                    <div class="box">
+                        <img src="img/glossier-skincare-futuredew-carousel-01.png" alt="">
+                        <div class="text">skin</div>
+                    </div>
+
+                    <div class="box">
+                        <img src="img/glossier-makeup-lipglaze-carousel-01.png" alt="">
+                        <div class="text">makeup</div>
+                    </div>
+
+                    <div class="box">
+                        <img src="img/glossier-body-bdc-carousel-01.png" alt="">
+                        <div class="text">body</div>
+                    </div>  
+
+                    <div class="box">
+                        <img src="img/glossier-body-bdc-carousel-01.png" alt="">
+                        <div class="text">sets</div>
+                    </div>  
+                    
+
+                </inner>
+            </main>
+        </section><!-- section3 -->
+
+        <section class="section4">               
+            <inner class="inner">
+                    <div class="title">new limited edition</div>
+                    <img src="img/glossier-doux-launch-carousel-10.png" alt="">
+                    <div class="text_box">
+                        <h2>Glossier You Doux</h2>
+                        <h3>The balance of you.</h3>
+                    </div><!-- text_box -->
+            </inner>
+        </section><!-- section4 -->
+
+        <section class="section5">
+            <inner class="inner">
+                <div class="box">
+                    <img src="img/glossier-spritz-duo-carousel-02" alt="">
+                    <div class="text">
+                        <h2>spritz duo $56 $70</h2>
+                        <a href="#">save 20% with this set!</a>
+                    </div><!-- text -->
+                </div><!-- box -->
+                <button class="button">create your set</button>
+            </inner>
+        </section><!-- section5 -->
+
+        <section class="section6">
+            <inner class="inner">
+                <div class="box">
+                    <img src="img/glossier-doux-notalent-module-01-desktop" alt="">
+                    <div class="text">
+                        <strong>our philosophy</strong>
+                        <h3>we make products inspired by real life, 
+                            embracing the ethos of 
+                            Skin First. Makeup Second™. 
+                            We believe beauty is about having fun, 
+                            celebrating freedom, and being present. 
+                            No matter where you are in your 
+                            beauty journey, you look good.</h3>
+                    </div><!-- text --> 
+                </div><!-- box -->
+                
+                <div class="box2">
+                    <strong>Subscribe + save 10% 
+                        on skincare essentials </strong>
+                    
+                    <button class="button">e-mail
+                        <input type="email" placeholder="Enter your email">
+                    </button>
+                    
+
+                </div><!-- box2 -->
+
+                </div>
+            </inner>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="footer">
+
+
+
+
+
+
+
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div><!--  -->
+
 </body>
 </html>
