@@ -10,6 +10,10 @@ body {
     font-family: 'Poppins';
 }
 
+html, body {
+    overflow-y: scroll;
+}
+
 
 #wrap {
     max-width: 1024px;
@@ -20,142 +24,45 @@ body {
 }
 
 
-.onboarding {
-    width: 100%;
-    height: 812px;
-    position: relative;
-    margin: 0 auto;
-    background-color: white;
-    overflow: hidden;
-    position: relative;
-}
-
-.onboarding .image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-}
-
-.onboarding .inner{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 10;
-}
-
-.onboarding .inner .logo{    
-    width: 100%;
-    height: 200px;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10; 
-}
-
-.onboarding .inner .box{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    z-index: 10;
-
-}
-
-
-
-.onboarding .inner .box h2{
-    width: 200px;
-    font-size: 16px;
-    text-align: center;
-    border: 2px solid #F8B5BB;
-    border-radius: 30px;
-    padding: 3px 20px;
-}
-
-.onboarding .inner .box h2:active{
-    border: 3px dotted black;
-}
-
-.onboarding .inner .box h3{
-    width: 200px;
-    font-size: 16px;
-    text-align: center;
-    border: 2px solid #F8B5BB;
-    background-color: #F8B5BB;
-    color: black;
-    border-radius: 30px;
-    padding: 3px 20px;
-
-}
-
-.onboarding .inner .box h3:active{
-    border: 3px dotted black;
-}
-
-.onboarding .inner .box p{
-    width: 100%;
-    font-size: 15px;
-    text-align: center;
-    font-weight: 200;
-}
-.onboarding .inner .text_box{
-    width: 100%;
-    height: 200px;
-    color: white;
-    text-align: center;
-    font-weight: 200;
-}
-
-.onboarding .inner .text{
-    color: white;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    z-index: 10;
-    font-size: 13px;
-    line-height: 15px;
-    font-weight: 200;
-}
-
-.onboarding .inner .text a{
-    color: white;
-    text-decoration: underline;
-    width: 100%;
-    height: 100px;
-    font-size: 12px;
-    text-align: center;
-    line-height: 20px;
-
-}
-
-
-
 .section1 {
     width: 100%;
-    height: 812px;
     background-color: white;
     overflow: hidden;
     padding: 48px 16px;
-   
+    position: relative;
+    margin-top: 100vh;
+
 }
+
+
+.section1 .image {
+    position: fixed;
+    inset: 0;               /* top:0; right:0; bottom:0; left:0 */
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    overflow: hidden;
+
+}
+
+.section1 .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: translateZ(0);
+}
+
+.section1 .header{
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    z-index: 1000;         /* 이미지/본문보다 앞 */
+    background: transparent;
+    padding: 16px;
+}
+
 
 .section1 .header .inner .logo{
     z-index: 10;
@@ -165,7 +72,10 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
+
 }
+
+
 
 .section1 .header .inner .logo img{
     width: 170px;
@@ -188,6 +98,7 @@ body {
     position: relative;
     display: inline-block;
     z-index: 10;
+    
 }
 
 .section1 .header .inner .menulist{
@@ -202,6 +113,7 @@ body {
     background-color: #FFE8EB;
     border-radius: 10px;
     padding: 0 10px;
+    z-index: 999;
     
 
 }
@@ -216,10 +128,11 @@ body {
     height: 40px;
     border: 1px solid transparent;
     cursor: pointer;
-    z-index: 10;
+    
     font-size: 16px;
     font-weight: 500;
     color: black;
+    
 
 
 }
@@ -237,6 +150,7 @@ body {
     opacity: 0;             /* 처음엔 투명 */
     pointer-events: none;   /* 닫힌 상태에서는 클릭 불가 */
     transition: transform .24s ease, opacity .24s ease;
+    z-index: 2000;
 
 }
 
@@ -277,21 +191,15 @@ body {
     padding-bottom: 50px;
     overflow: hidden;
     position: relative;
+    z-index: 2; 
 }
 
-
-
-.section1 .main .image img{
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
 
 .section1 .main .text_box{
-    position: absolute;
+    z-index: 1; 
+    padding: 80px 20px 20px;
+
+    /* position: absolute;
     top: 55%;
     left: 50%;
     transform: translateX(-50%);
@@ -299,17 +207,24 @@ body {
     text-align: left;
     padding: 20px 30px;
 
-    z-index: 10;
-
+    z-index: 1;
+ */
     color: white;
-    font-size: 50px;
+    font-size: 200px;
     font-weight: 200;
     line-height: 60px;
     font-style: italic;
 
 
 }
+
+.section1 .main .text_box h2{
+    margin: 0; font-size: 48px; line-height: 1.12;
+
+}
+
 .section1 .main .button {
+    position: relative; z-index: 1;
     border-radius: 10px;
     background-color: #FFE8EB;
     width: 100%;
@@ -320,11 +235,19 @@ body {
 .section1 .main .button:active {
         border: 5px dotted black;
     }   
+section:not(.section1) {
+background: #fff;
+position: relative;
+z-index: 1;
+width: 100%;
+}
 
 .section2 {
     width: 100%;
-    background-color: white;
     padding: 48px 16px;
+    overflow: hidden;
+
+    
 }
 
 .section2 .header{
@@ -336,9 +259,11 @@ body {
     margin-bottom: 10px;
     font-size: 17px;
     font-weight: 500;
+    background-color: white;
+    
+
 }
 
-.section2 .header .title{}
 .section2 .main{
     width: 100%;
     overflow: hidden;
@@ -348,12 +273,12 @@ body {
 
 .section2 .main .swiper{
     width: 100%;
-    height: 500px;
     padding-bottom: 50px;
     border: #FFE8EB 5px solid;
     border-radius: 10px;
+    background-color: #ffffff;
 }
-.section2 .main .swiper-wrapper{}
+
 
 .section2 .main .swiper-wrapper .swiper-slide{
     padding: 20px;
