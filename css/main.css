@@ -13,6 +13,7 @@ body {
 
 #wrap {
     max-width: 1024px;
+    /* 모바일 화면으로 보려면 480px  */
     margin:0 auto;
     background-color: rgb(255, 255, 255);
     
@@ -153,6 +154,7 @@ body {
     background-color: white;
     overflow: hidden;
     padding: 48px 16px;
+   
 }
 
 .section1 .header .inner .logo{
@@ -182,61 +184,89 @@ body {
 
 }
 
+.section1 .header .inner .menu {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
 
-.section1 .header .inner .nav .gnb{
-    font-size: 15px;
+.section1 .header .inner .menulist{
     width: 100%;
-    height: 35px;
-    padding: 20px;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    font-size: 17px;
     background-color: #FFE8EB;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 10px;
+    
 
 }
 
-.section1 .header .inner .nav .gnb >li{
-    position: relative;}
+.section1 .header .inner .menu .menu_btn{
 
-
-.section1 .header .inner .nav .gnb >li .depth-01{
-    display: block;
+    display: inline-block;
+    align-items: center;
+    line-height: 1;
+    width: auto;
     padding: 10px 15px;
-    font-size: 15px;
+    height: 40px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 16px;
     font-weight: 500;
     color: black;
-    cursor: pointer;
+
 
 }
 
-.section1 .header .inner .nav .gnb >li .depth-01.active {
+.section1 .header .inner .menu .menu_btn.active{
     color: #0308FF;
 
-
 }
 
 
-.section1 .header .inner .nav .gnb >li .depth-02{
-    display: none;
-    background-color: white;
-    border-radius: 5px;
-    border: #FFE8EB 5px solid;
+.section1 .header .inner .menu .nav{
     position: absolute;
-    top: 40px;
-    left: -20%;
-    z-index: 10;
-    width: 120px;
-    height: auto;
-    text-align: center;
-    padding: 10px 0;
-    line-height: 30px;
-    overflow: hidden;
+    max-height: 0;          /* 기본 높이 0으로 숨김 */
+    overflow: hidden;       /* 내용 넘치는 부분 안 보이게 */
+    opacity: 0;             /* 처음엔 투명 */
+    pointer-events: none;   /* 닫힌 상태에서는 클릭 불가 */
+    transition: transform .24s ease, opacity .24s ease;
 
 }
 
-.section1 .header .inner .menu .nav .gnb >li:last-child .depth-01:active{
-    color: #0308FF;
+.section1 .header .inner .menu .nav.active{
+    max-height: 500px;      /* 충분히 큰 값으로 설정 (내용보다 크게) */
+    opacity: 1;             /* 나타나기 */
+    pointer-events: auto;   /* 열리면 클릭 가능 */
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    width: 100px;
+    height: auto;
+    background-color: #ffffff;
+    border: #FFE8EB 5px solid;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 25px;
+    color: black;
+    z-index: 10;
+    position: absolute;
+
+
+}
+
+.section1 .header .inner .menu .nav.active li:hover{
+    background-color: #0308FF;
+    color: white;
+    cursor: pointer;
 }
 
 
@@ -249,9 +279,11 @@ body {
     position: relative;
 }
 
+
+
 .section1 .main .image img{
     width: 100%;
-    height: 546px;
+    height: 500px;
     overflow: hidden;
     object-fit: cover;
     border-radius: 10px;
@@ -322,18 +354,24 @@ body {
     border-radius: 10px;
 }
 .section2 .main .swiper-wrapper{}
+
 .section2 .main .swiper-wrapper .swiper-slide{
     padding: 20px;
-    height: 400px;
-    width: 300px;
-
 
 }
-.section2 .main .swiper-wrapper .swiper-slide img{
+
+.section2 .main .swiper-wrapper .swiper-slide .image{
+    padding-bottom: 125.32%; /* 287/229*100 */
+    position: relative;
+}
+
+.section2 .main .swiper-wrapper .swiper-slide .image img{
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     object-fit: cover;
-    border-radius: 10px;
     margin-bottom: 30px;
 }
 
@@ -347,7 +385,10 @@ body {
     gap: 50px;
     font-size: 18px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin: 10px 0;
+    text-align: left;
+    cursor: pointer;
+    
 }
 
 /* .section2 .main .swiper-wrapper .swiper-slide .text:active
@@ -499,13 +540,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 50px;
+    padding-left: 50px;
     overflow: hidden;
 
 }
 
 .section3 .main .box {
-    width: 156px;
-    height: 200px;  
+    width: 180px;
+    height: 220px;  
     position: relative;
     margin: 10px;
 

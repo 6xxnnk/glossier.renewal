@@ -7,53 +7,61 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
 </head>
-<script>
-        window.onload =()=>{
-            const depth01 = document.querySelectorAll('.depth-01');
-            const depth02 = document.querySelectorAll('.depth-02');
 
-            depth01.forEach((el, index)=>{
-                el.addEventListener('click', (e)=>{
-                    e.preventDefault();
-                    depth02.forEach((el)=>{
-                        el.style.display = 'none';
-                    });
-                    depth01.forEach((el)=>{
-                        el.classList.remove('active');
-                    });
-                    depth02[index].style.display = 'block';
-                    el.classList.add('active');
-                });
-            });
-            
-            
-    };
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-</script>
     <script>
-        window.onload = () => {
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 1.5,
-                spaceBetween: 15,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
+        window.onload=()=>{
+    
+    const menuBtn = document.querySelectorAll(".menu_btn");
+    const nav = document.querySelectorAll(".nav");
+
+    
+    menuBtn.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      // 1) 먼저 모든 nav 닫기
+    nav.forEach((n) => n.classList.remove("active"));
+    menuBtn.forEach((b) => b.classList.remove("active"));
+
+      // 2) 현재 눌린 버튼의 nav 열기 (토글 효과 원하면 조건 체크 가능)
+    nav[index].classList.add("active");
+    btn.classList.add("active");
+    });
+});
+
+
+
+    /* Swiper */
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        
+    },
+    
+    navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
-                },
+                    },
 
-                // centeredSlides: true,
-                autoplay: {
-                    delay: 3000, //3초 
-                    disableOnInteraction: false,
-                },
-                speed: 1000
-            });
-        }
+                    //centerdSlides:true,
+
+                    autoplay:{
+                        delay:3000,//3초
+                        disableOnInteraction:false,
+                    },
+                    speed:1000
+                });
+    /* Swiper end */
+    
+
+                
+            }
+        
     </script>
 
 
@@ -62,32 +70,6 @@
 <body>
     <div id="wrap">
 
-        <div class="onboarding">
-            
-                <div class="image">
-                    <img src="img/glossier-lipglaze-icy-carousel-02.jpg" alt="">
-                </div><!-- image -->.
-
-                <div class="inner">
-                    <div class="logo"><img src="img/glossier-logo.png" alt=""></div>
-  
-                     <div class="box">
-                        <h2>sign up</h2>      
-                        <h3>log in</h3>
-                        <p>Continue without registration</p>
-                    </div><!-- box -->
-                        
-                    
-                        
-                        
-                        <div class="text">
-                        By signing up, you agree to Glossier's <br>
-                        <a href="#">Terms of Service</a> 
-                        and 
-                        <a href="#">Privacy Policy</a>.
-                        </div><!-- text -->
-                </div><!-- inner -->
-        </div><!-- onboarding -->
 
         <section class="section1">
         <header class="header">
@@ -100,78 +82,74 @@
                         </div><!-- icon -->
                 </div><!-- logo -->
 
+                <div class="menulist">
                 <div class="menu">
+                <button class="menu_btn">skincare</button>
                         <nav class="nav">
-                            <ul class="gnb">
-                            <li>
-                                <a href="#" class="depth-01">skincare</a>
-                                <ul class="depth-02">
-                                <li><a href="#">menu1</a></li> 
-                                <li><a href="#">menu2</a></li> 
-                                <li><a href="#">menu3</a></li> 
-                                <li><a href="#">menu4</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                <li><a href="#">menu5</a></li> 
+                                <ul class="gnb">
+                                <li><a href="#">all</a></li> 
+                                <li><a href="#">cleansers</a></li> 
+                                <li><a href="#">balms</a></li> 
+                                <li><a href="#">sunscreen</a></li> 
+                                <li><a href="#">treatments</a></li> 
+                                <li><a href="#">moisturizers</a></li> 
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="depth-01">makeup</a>
-                                <ul class="depth-02">
-                                <li><a href="#">menu1</a></li> 
-                                <li><a href="#">menu2</a></li> 
-                                <li><a href="#">menu3</a></li> 
-                                <li><a href="#">menu4</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="depth-01">body</a>
-                                <ul class="depth-02">
-                                <li><a href="#">menu1</a></li> 
-                                <li><a href="#">menu2</a></li> 
-                                <li><a href="#">menu3</a></li> 
-                                <li><a href="#">menu4</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="depth-01">sets</a>
-                                <ul class="depth-02">
-                                <li><a href="#">menu1</a></li> 
-                                <li><a href="#">menu2</a></li> 
-                                <li><a href="#">menu3</a></li> 
-                                <li><a href="#">menu4</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="depth-01">about</a>
-                            </li>
-                            </ul>
                         </nav>
-
-                        
-                       <!--  <div class="menu_back"></div>
-                        <nav class="nav">
-                            <ul class="gnb">
-                            <li>
-                                <ul class="depth-01">
-                                <li><a href="#">menu1</a></li> 
-                                <li><a href="#">menu2</a></li> 
-                                <li><a href="#">menu3</a></li> 
-                                <li><a href="#">menu4</a></li> 
-                                <li><a href="#">menu5</a></li> 
-                                </ul>
-                            </li>
-                            </ul>
-                        </nav> -->
-
                 </div><!-- menu -->
+                <div class="menu">
+                <button class="menu_btn">makeup</button>
+                        <nav class="nav">
+                                <ul class="gnb">
+                                <li><a href="#">all</a></li> 
+                                <li><a href="#">face</a></li> 
+                                <li><a href="#">brow</a></li> 
+                                <li><a href="#">eye</a></li> 
+                                <li><a href="#">cheek</a></li> 
+                                <li><a href="#">tools</a></li> 
+                                <li><a href="#">lip</a></li> 
+                                <li><a href="#">removers</a></li> 
+                                </ul>
+                        </nav>
+                </div><!-- menu -->
+                <div class="menu">
+                <button class="menu_btn">body</button>
+                        <nav class="nav">
+                                <ul class="gnb">
+                                <li><a href="#">all</a></li> 
+                                <li><a href="#">lotion</a></li> 
+                                <li><a href="#">oil wash</a></li> 
+                                <li><a href="#">body spritz</a></li> 
+                                <li><a href="#">oil mist</a></li> 
+                                </ul>
+                        </nav>
+                </div><!-- menu -->
+                <div class="menu">
+                <button class="menu_btn">sets</button>
+                        <nav class="nav">
+                                <ul class="gnb">
+                                <li><a href="#">all</a></li> 
+                                <li><a href="#">makeup</a></li> 
+                                <li><a href="#">skincare</a></li> 
+                                <li><a href="#">body</a></li> 
+                                </ul>
+                        </nav>
+                </div><!-- menu -->
+                <div class="menu">
+                <button class="menu_btn">about</button>
+                        <nav class="nav">
+                                <ul class="gnb">
+                                <li><a href="#">store</a></li> 
+                                <li><a href="#">mission</a></li>
+                                <li><a href="#">careers</a></li>
+                                <li><a href="#">contact</a></li>
+                                </ul>
+                        </nav>
+                </div><!-- menu -->
+                
 
-            </div>
+                </div><!-- menulist -->
+            </div><!-- inner -->
+                
     </header>
 
         <main class="main"><!--선택자 지정 안해도 됨 -->
@@ -200,7 +178,9 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                             <div class="swiper-slide">
+                                <div class="image">
                                 <img src="img/glossier-skincare-futuredew-carousel-01.png" alt="">
+                                </div>
                                 <div class="text">
                                     <h2>Futuredew</h2>
                                     <h3>$26</h3>
@@ -209,8 +189,9 @@
                             </div><!-- swiper-slide -->
 
                             <div class="swiper-slide">
+                                <div class="image">
                                 <img src="img/glossier-skincare-afterbaume-carousel-01.png" alt="">
-                               <div class="text">
+                               </div><div class="text">
                                     <h2>After Baume</h2>
                                     <h3>$51</h3>
                                 </div>
@@ -219,8 +200,9 @@
                             </div><!-- swiper-slide -->
 
                             <div class="swiper-slide">
+                                <div class="image">
                                 <img src="img/glossier-bdc-espresso-carousel-01.jpg" alt="">
-                                <div class="text">
+                                </div><div class="text">
                                     <h2>Espresso</h2>
                                     <h3>$38</h3>
                                 </div>
@@ -228,8 +210,9 @@
                             </div><!-- swiper-slide -->
 
                             <div class="swiper-slide">
+                                <div class="image">
                                 <img src="img/glossier-body-sandstone-set-carousel-01.png" alt="">
-                                <div class="text">
+                                </div><div class="text">
                                     <h2>Sandstone Set</h2>
                                     <h3>$56</h3>
                                 </div>
@@ -237,8 +220,9 @@
                             </div><!-- swiper-slide -->
 
                             <div class="swiper-slide">
+                                <div class="image">
                                 <img src="img/glossier-body-spritz-obn-carousel-01.png" alt="">
-                                <div class="text">
+                                </div><div class="text">
                                     <h2>Body Spritz</h2>
                                     <h3>$28</h3>
                                 </div>
@@ -293,21 +277,21 @@
                         </div>
                     </div><!-- box -->
                     <div class="box">
-                        <img src="img/glossier-kits-futuredew-solid-module-02_ca3b2455-ce6e-4e12-9560-26466b323eb4.png" alt="">
+                        <img src="img/glossier-cppb-tout-desktop-01.png" alt="">
                         <div class="text">
-                            <p>skin</p>
+                            <p>make <br> up</p>
                         </div>
                     </div><!-- box -->
                     <div class="box">
-                        <img src="img/glossier-kits-futuredew-solid-module-02_ca3b2455-ce6e-4e12-9560-26466b323eb4.png" alt="">
+                        <img src="img/glossier-dailybodyduo-carousel-02.jpg" alt="">
                         <div class="text">
-                            <p>skin</p>
+                            <p>body</p>
                         </div>
                     </div><!-- box -->
                     <div class="box">
-                        <img src="img/glossier-kits-futuredew-solid-module-02_ca3b2455-ce6e-4e12-9560-26466b323eb4.png" alt="">
+                        <img src="img/glossier-about-us-top-module-01.jpg" alt="">
                         <div class="text">
-                            <p>skin</p>
+                            <p>sets</p>
                         </div>
                     </div><!-- box -->
                     

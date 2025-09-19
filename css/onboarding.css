@@ -1,0 +1,137 @@
+@charset "UTF-8";
+@import url('reset.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    background-color: aliceblue;
+    font-family: 'Poppins';
+}
+
+.onboarding {
+    width: 100%;
+    height: 812px;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+}
+
+.onboarding .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+}
+
+.onboarding .inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.onboarding .inner .logo{    
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10; 
+}
+
+.onboarding .inner .box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 10;
+
+}
+
+
+
+.onboarding .inner .box h2{
+    width: 200px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #F8B5BB;
+    border-radius: 30px;
+    padding: 3px 20px;
+}
+
+.onboarding .inner .box h2:active{
+    border: 3px dotted black;
+}
+
+.onboarding .inner .box h3{
+    width: 200px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #F8B5BB;
+    background-color: #F8B5BB;
+    color: black;
+    border-radius: 30px;
+    padding: 3px 20px;
+
+}
+
+.onboarding .inner .box h3:active{
+    border: 3px dotted black;
+}
+
+.onboarding .inner .box p{
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 200;
+}
+.onboarding .inner .text_box{
+    width: 100%;
+    height: 200px;
+    color: white;
+    text-align: center;
+    font-weight: 200;
+}
+
+.onboarding .inner .text{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    z-index: 10;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 200;
+}
+
+.onboarding .inner .text a{
+    color: white;
+    text-decoration: underline;
+    width: 100%;
+    height: 100px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+
+}
+
