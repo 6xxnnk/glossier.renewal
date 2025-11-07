@@ -16,6 +16,14 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
+<!-- Swiper JS -->
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<!-- 분리된 앱 스크립트 (둘 다 defer) -->
+<script src="js/onboarding.js" defer></script>
+<script src="js/app.js" defer></script>
+
 <body>
   <div id="wrap">
     <!-- ====== Fixed background hero ====== -->
@@ -173,7 +181,9 @@
         <div class="promo">
           <img src="img/glossier-cppb-homepage-1x.jpg" alt="Phone camera personalization" />
           <div class="overlay">
-            <p>Utilize your phone’s camera for facial recognition and discover product insights designed to complement your own beauty</p>
+            <p>Utilize your phone’s camera for facial recognition <br> 
+                and discover product insights <br> 
+                designed to complement your own beauty</p>
             <img class="chev" src="img/Vector-3.png" alt="Chevron" />
           </div>
         </div>
@@ -209,7 +219,7 @@
     <section class="section4 container">
       <div class="tile inner">
         <div class="title">new limited edition</div>
-        <img src="img/glossier-doux-launch-carousel-10.png" alt="Glossier You Doux" />
+        <img src="img/glossier-carousel-doux-xl-02.png" alt="Glossier You Doux" />
         <div class="text_box">
           <h2>Glossier You Doux</h2>
           <h3>The balance of you.</h3>
@@ -255,6 +265,131 @@
         </form>
       </div>
     </section>
+<section class="section7">
+  <div class="inner">
+    <div class="title">skin analyzer & picks</div>
+
+    <!-- Chips -->
+    <div class="chips" role="tablist" aria-label="Skin focus">
+      <button class="chip active" data-track="chip-hydration" role="tab" aria-selected="true">hydration</button>
+      <button class="chip" data-track="chip-barrier" role="tab" aria-selected="false">barrier</button>
+      <button class="chip" data-track="chip-bright" role="tab" aria-selected="false">brightening</button>
+      <button class="chip" data-track="chip-calm" role="tab" aria-selected="false">calming</button>
+    </div>
+
+    <!-- Tracks (각 칩마다 Swiper 한 개씩) -->
+    <div class="tracks">
+      <!-- hydration -->
+      <div class="track active" id="chip-hydration" role="tabpanel">
+        <div class="swiper chip-swiper" data-init="false">
+          <div class="swiper-wrapper">
+            <!-- slide -->
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/hydration-1.jpg" alt="Hydration item 1" /></div>
+                <div class="copy"><h4>Hydra Serum</h4><p>Deep hydration booster.</p></div>
+                <div class="cta"><span class="price">$29</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/hydration-2.jpg" alt="Hydration item 2" /></div>
+                <div class="copy"><h4>Dew Balm</h4><p>Water-locking balm.</p></div>
+                <div class="cta"><span class="price">$22</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- barrier -->
+      <div class="track" id="chip-barrier" role="tabpanel">
+        <div class="swiper chip-swiper" data-init="false">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/barrier-1.jpg" alt="Barrier item 1" /></div>
+                <div class="copy"><h4>Ceramide Cream</h4><p>Strengthen skin barrier.</p></div>
+                <div class="cta"><span class="price">$35</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/barrier-2.jpg" alt="Barrier item 2" /></div>
+                <div class="copy"><h4>Recovery Balm</h4><p>Soothes & seals.</p></div>
+                <div class="cta"><span class="price">$31</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- brightening -->
+      <div class="track" id="chip-bright" role="tabpanel">
+        <div class="swiper chip-swiper" data-init="false">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/bright-1.jpg" alt="Brightening item 1" /></div>
+                <div class="copy"><h4>Glow C</h4><p>Vitamin C daily serum.</p></div>
+                <div class="cta"><span class="price">$27</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/bright-2.jpg" alt="Brightening item 2" /></div>
+                <div class="copy"><h4>Tone Drops</h4><p>Even tone enhancer.</p></div>
+                <div class="cta"><span class="price">$25</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- calming -->
+      <div class="track" id="chip-calm" role="tabpanel">
+        <div class="swiper chip-swiper" data-init="false">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/calm-1.jpg" alt="Calming item 1" /></div>
+                <div class="copy"><h4>Calm Mist</h4><p>Centella-rich soothing mist.</p></div>
+                <div class="cta"><span class="price">$19</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="media"><img src="img/calm-2.jpg" alt="Calming item 2" /></div>
+                <div class="copy"><h4>Relief Gel</h4><p>Redness relieving gel.</p></div>
+                <div class="cta"><span class="price">$21</span><button class="btn-mini">Add</button></div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section8">
+  <div class="inner">
+    <div class="title">community looks</div>
+    <div class="feed">
+      <div class="tile"><img src="img/look-1.jpg" alt="community look 1"><span class="tag">#GlossierYou</span></div>
+      <div class="tile"><img src="img/look-2.jpg" alt="community look 2"><span class="tag">#SkinFirst</span></div>
+      <div class="tile"><img src="img/look-3.jpg" alt="community look 3"><span class="tag">#DewyGlow</span></div>
+      <div class="tile"><img src="img/look-4.jpg" alt="community look 4"><span class="tag">#EverydayMakeup</span></div>
+    </div>
+    <div class="cta">
+      <button class="btn" type="button">submit your look</button>
+    </div>
+  </div>
+</section>
 
     <!-- ====== Footer ====== -->
     <footer class="footer">
@@ -301,47 +436,7 @@
     </nav>
   </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    // Menu toggle logic (one open at a time + click-outside to close)
-    const menuBtns = Array.from(document.querySelectorAll('.menu_btn'));
-    const navs = Array.from(document.querySelectorAll('.nav'));
 
-    function closeAll(){
-      navs.forEach(n => n.classList.remove('active'));
-      menuBtns.forEach(b => b.classList.remove('active'));
-    }
 
-    menuBtns.forEach((btn, i) => {
-      btn.addEventListener('click', (e) => {
-        const wasActive = btn.classList.contains('active');
-        closeAll();
-        if(!wasActive){
-          btn.classList.add('active');
-          navs[i].classList.add('active');
-        }
-        e.stopPropagation();
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if(!e.target.closest('.menu')) closeAll();
-    });
-
-    // Swiper
-    const swiper = new Swiper('.mySwiper', {
-      slidesPerView: 1.5,
-      spaceBetween: 30,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      speed: 1000,
-      breakpoints: {
-        768: { slidesPerView: 2.25, spaceBetween: 28 },
-        1024:{ slidesPerView: 3, spaceBetween: 32 }
-      }
-    });
-  </script>
 </body>
 </html>
