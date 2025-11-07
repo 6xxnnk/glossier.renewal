@@ -25,11 +25,17 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============== Base ============== */
-html, body { overflow-y: scroll; overflow-x: hidden; }
+html, body {   overflow-y: auto !important;   /* 기존 scroll 강제값 무력화 */
+  -ms-overflow-style: none;      /* IE/Edge */
+  scrollbar-width: none;  }
 body{
   background-color: aliceblue;
   font-family: 'Poppins', Poppins, system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', sans-serif;
   color: var(--t);
+
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none;                 /* WebKit */
 }
 #wrap{ max-width: var(--wrap-max); margin: 0 auto; background: var(--surface); }
 .container{ padding: 48px 16px; }
@@ -44,7 +50,7 @@ body{
 .section4 .title,
 .section7 .title,
 .section8 .title{
-  font-weight: 700;
+  font-weight: 500;
   text-transform: lowercase;
   font-size: clamp(22px, 5.6vw, 34px);
   letter-spacing: .2px;
@@ -78,9 +84,9 @@ body{
   display:flex; align-items:center; justify-content:space-between;
   gap: 12px; margin-bottom: 10px; position:relative; z-index:2;
 }
-.header .brandbar .logo img{ width: 160px; height:auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.12)); }
-.header .brandbar .icons{ display:flex; gap: 12px; align-items:center; }
-.header .brandbar .icons img{ width: 28px; height: 28px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.12)); }
+.header .brandbar .logo img{ width: 200px; height:auto; }
+.header .brandbar .icons{ display:flex; gap: 15px; align-items:center; margin-top: 5px; }
+.header .brandbar .icons img{ width: 28px; height: 28px;  }
 
 /* --------------- 절대 수정 금지 구간(요청) --------------- */
 
@@ -91,12 +97,11 @@ body{
   gap: 8px;                                /* 버튼 사이 동일 간격 */
   align-items: center;
   justify-items: stretch;
-  padding: 8px;
-  background: rgba(255,232,235,.92);
+  padding: 3px;
+  background: #ffffffeb;
   backdrop-filter:saturate(120%) blur(6px);
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,.04);
-  overflow: hidden;    
+  border-radius: 30px;
+  border: 1px solid rgba(0,0,0,.04);  
 }
 .menu{
   position: relative;
@@ -105,11 +110,12 @@ body{
 .menu_btn{
   width: 100%;
   padding: 12px 0;
-  border-radius: 999px;
+  border-radius: 30px;
   color: #111; line-height: 1; text-align: center;
   background: #fff;
   border: 1px solid var(--bd);
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 15px;
 }
 .menu_btn.active{
   outline: 2px solid #f4c1cf;
@@ -122,9 +128,10 @@ body{
   opacity: 0; pointer-events: none; transform: translateY(-4px);
   transition: .24s ease; max-height: 0; overflow: hidden; z-index: 10;
 }
-.nav.active{ opacity: 1; pointer-events: auto; transform: translateY(0); max-height: 700px; }
+.nav.active{ opacity: 1; pointer-events: auto; transform: translateY(0); 
+    max-height: 700px;  }
 .nav .panel{
-  width: min(92vw, 300px);
+  width: 150px;
   background: #fff;
   border: 5px solid var(--accent-2);
   border-radius: var(--radius);
@@ -138,7 +145,7 @@ body{
 .nav .panel li{ position: relative; }
 .nav .panel li > a{
   display:block; padding:10px 12px; border-radius: 8px; font-size:14px; color:#111;
-  border: 1px solid transparent; transition: .15s ease; background:#fff;
+  border: 1px solid transparent; transition: .15s ease; background:#ffffff00;
 }
 .nav .panel li > a:hover,
 .nav .panel li > a:focus{
