@@ -523,7 +523,7 @@ body{
   max-width: var(--iphone-w);
   margin-left:auto; margin-right:auto;
 }
-.container, .inner{ max-width: calc(var(--iphone-w) - 32px); }
+
 img, video, canvas, iframe{ max-width:100%; }
 
 /* 데스크톱 이상에서도 모바일 룩 강제 */
