@@ -39,7 +39,7 @@ body::-webkit-scrollbar, html::-webkit-scrollbar {
 }
 #wrap{ max-width: var(--wrap-max); margin: 0 auto; background: var(--surface); }
 .container{ padding: 48px 16px; }
-.inner{ width: 100%; max-width: calc(var(--wrap-max) - 32px); margin: 0 auto; }
+.inner{ width: 100%; margin: 0 auto; }
 
 /* 전역 폰트 고정 */
 * { font-family: 'Poppins', Poppins, system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', sans-serif; }
