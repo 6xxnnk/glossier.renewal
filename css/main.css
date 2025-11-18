@@ -187,17 +187,29 @@ body::-webkit-scrollbar, html::-webkit-scrollbar { display: none; }
 /* ============== Section 2 : Featured (Swiper) ============== */
 .section2 .swiper{
   width: 100%; padding-bottom: 48px;
-  border: 5px solid var(--accent-2); border-radius: var(--radius); background: #fff;
+  border: 5px solid var(--accent-2); 
+  border-radius: var(--radius); background: #fff;
+  overflow: hidden;
 }
-.swiper-slide{ padding: 16px; }
-.swiper-slide .image{ position: relative; padding-bottom: 125.32%; border-radius: 10px; overflow: hidden; background: #fafafa; }
-.swiper-slide .image img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.swiper-slide .text{ display:flex; align-items:center; justify-content: space-between; gap: 8px; margin: 12px 0; font-size: 18px; font-weight: 600; }
-.swiper-slide p{ margin: 0; color: var(--muted); font-size: 14px; font-style: italic; }
-.swiper-button-next, .swiper-button-prev{ color: #000; top: 44%; width: 27px; height: 44px; }
-.swiper-button-next:after, .swiper-button-prev:after{ display:none; }
-.swiper-pagination-bullet{ background: #000; opacity: 1; }
-.swiper-pagination-bullet-active{ background: var(--accent); }
+/* 👇 여기부터 수정 포인트 */
+.section2 .swiper-wrapper{
+  display: flex;                    /* Swiper 기본값 다시 명시 */
+}
+.section2 .swiper-slide{ padding: 16px;
+  flex: 0 0 100%;                   /* 한 화면에 1장씩 꽉 차게 */
+  max-width: 100%;
+  padding: 16px;                    /* 기존 패딩 유지 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
+.section2 .swiper-slide .image{ position: relative; padding-bottom: 125.32%; border-radius: 10px; overflow: hidden; background: #fafafa; }
+.section2 .swiper-slide .image img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.section2 .swiper-slide .text{ display:flex; align-items:center; justify-content: space-between; gap: 8px; margin: 12px 0; font-size: 18px; font-weight: 600; }
+.section2 .swiper-slide p{ margin: 0; color: var(--muted); font-size: 14px; font-style: italic; }
+.section2 .swiper-button-next, .section2 .swiper-button-prev{ color: #000; top: 44%; width: 27px; height: 44px; }
+.section2 .swiper-button-next:after, .section2 .swiper-button-prev:after{ display:none; }
+.section2 .swiper-pagination-bullet{ background: #000; opacity: 1; }
+.section2 .swiper-pagination-bullet-active{ background: var(--accent); }
 
 .section2 .cta-all{ width: 100%; margin: 16px 0 50px 0; align-items: center; justify-content: center; display:flex; }
 .section2 .promo{
@@ -207,6 +219,7 @@ body::-webkit-scrollbar, html::-webkit-scrollbar { display: none; }
 .section2 .promo:hover{ background: inherit !important; border: 3px dotted #111 !important; color: inherit !important; }
 .section2 .promo .overlay p{ font-size: 14px; line-height: 1.4; margin: 10px 0; color: #111; display: block; text-align: center; }
 .section2 .promo .chev{ width: 20px; height: 20px; display: block; justify-content: center; align-items: center; margin-left: 208px; }
+
 
 /* ============== Ribbon ============== */
 .ribbon{
@@ -233,7 +246,7 @@ body::-webkit-scrollbar, html::-webkit-scrollbar { display: none; }
 .ribbon__text{ font-size: clamp(18px, 2.2vw, 28px); }
 .ico{ width: clamp(20px, 2.6vw, 28px); height: auto; color: var(--ribbon-icon); }
 .ribbon:hover .ribbon__track{ animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce){ .ribbon__track{ animation: none; } }
+
 
 /* ============== Section 3 : Categories ============== */
 .section3 .title{ margin-bottom: 12px; }
@@ -544,14 +557,6 @@ img, video, canvas, iframe{ max-width:100%; }
   /* Section 6 */
   .section6 .about{ flex-direction: column !important; align-items: center !important; }
   .section6 .about .block .media{ width:140px !important; height:140px !important; }
-
-  /* Section 7 : 섹션/컨테이너 폭 390 고정 */
-  .section7{
-    width: var(--iphone-w) !important;
-    margin: 0 auto !important;
-    padding: 40px 16px !important;
-  }
-  .section7 .chips{ overflow: hidden !important; }
 
   /* Section 8 */
   .section8 .feed{ grid-template-columns: 1fr 1fr !important; }
